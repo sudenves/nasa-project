@@ -1,0 +1,53 @@
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.impact-btn {
+    flex: 1;
+    padding: 12px;
+    background: #4b5563;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.impact-btn:hover {
+    background: #6b7280;
+}
+
+.impact-btn.active {
+    background: #3b82f6;
+}
+
+.impact-btn.active:hover {
+    background: #2563eb;
+}
+
+.simulate-button {
+    width: 100%;
+    padding: 15px;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.simulate-button:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+}
+
+.simulate-button:active {
+    transform: translateY(0);
+}
