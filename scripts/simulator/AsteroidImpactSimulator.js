@@ -81,7 +81,7 @@ export class AsteroidImpactSimulator {
         const missDistance = this.state.deltaV * 100000;
         
         this.uiController.showDeflectionResults(this.state.deltaV, missDistance);
-        this.threeDController.animateTrajectory(true); // true = savrulma
+        this.threeDController.animateTrajectory(true);
     }
     
     simulateImpact() {
@@ -97,7 +97,7 @@ export class AsteroidImpactSimulator {
         this.uiController.showImpactResults(this.state.impactPoint, effects, mitigationFailed);
         
         this.mapController.drawImpactEffects(effects);
-        this.threeDController.animateTrajectory(false); // false = çarpışma
+        this.threeDController.animateTrajectory(false); 
     }
     
     calculateImpactEffects(energy) {
