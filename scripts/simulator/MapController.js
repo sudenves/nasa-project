@@ -279,7 +279,7 @@ createSimplifiedZones(effects, severity) {
             dashArray: '5, 5'
         },
         { 
-            radius: effects.thermal * 1000,
+            radius: effects.thermal * 500,
             color: '#42ff3cff',
             label: 'Thermal Zone',
             opacity: 0.15,
@@ -350,3 +350,4 @@ getMap() {
     return this.map;
 }
 }
+
