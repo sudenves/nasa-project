@@ -1,98 +1,177 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: rgb(18, 24, 34);
-    color: #e5e7eb;
-    line-height: 1.5;
-    min-height: 100vh;
-    padding: 20px;
-    font-size: 16px;
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+color: #e5e7eb;
+line-height: 1.5;
+min-height: 100vh;
+padding: 20px;
+font-size: 16px;
+overflow-x: hidden; 
 }
 
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
+max-width: 2600px;
+margin: 0 auto;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 20px 0;
+text-align: center;
+margin-bottom: 30px;
+padding: 20px 0;
 }
 
 .header h1 {
-    font-size: 40px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 10px;
+letter-spacing: 1px;
+font-size: 2.5rem;
+background: linear-gradient(135deg, #60a5fa, #3b82f6);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.controls-panel,
+.visualization-panel .viz-container,
+.results-panel {
+box-shadow:
+0 0 25px rgba(96, 165, 250, 0.3), 
+inset 0 0 15px rgba(96, 165, 250, 0.1); 
+background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(30, 41, 59, 0.9));
+border: 2px solid rgba(96, 165, 250, 0.3);
+border-radius: 16px;
+backdrop-filter: blur(10px);
 }
 
 .header p {
-    font-size: 18px;
-    color: #9ca3af;
-    max-width: 600px;
-    margin: 0 auto;
+font-size: 18px;
+color: #9ca3af;
+max-width: 600px;
+margin: 0 auto;
 }
 
 .main-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+display: grid;
+grid-template-columns: 1fr;
+gap: 30px;
+min-height: 80vh;
+overflow: visible; 
 }
 
 @media (min-width: 1024px) {
-    .main-content {
-        grid-template-columns: 1fr 1fr;
-    }
+.main-content {
+grid-template-columns: 1fr 1fr;
+align-items: stretch;
+min-height: calc(100vh - 120px);
+}
+
+text
+.controls-panel, 
+.visualization-panel {
+    height: 100%; 
+    display: flex; 
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.visualization-panel {
+    gap: 30px;
+    min-height: 0;
 }
 
 .results-panel {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 2px solid #374151;
-    flex-grow: 1;
-    overflow-y: auto;
-    max-height: 400px;
+    flex-grow: 1; 
+    min-height: 0;
+}
 }
 
-.results-panel h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: white;
+.viz-container {
+background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(30, 41, 59, 0.9));
+border-radius: 16px;
+padding: 20px;
+border: 2px solid rgba(96, 165, 250, 0.3);
+box-shadow:
+0 0 25px rgba(96, 165, 250, 0.2),
+inset 0 0 15px rgba(96, 165, 250, 0.1);
+display: flex;
+flex-direction: column;
+flex: 1;
+min-height: 0;
 }
 
-.results-content {
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    line-height: 1.4;
+.viz-container h3 {
+color: #e2e8f0;
+font-size: 1.4rem;
+margin-bottom: 15px;
+text-align: center;
+text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+flex-shrink: 0;
 }
 
-.placeholder {
-    color: #fbbf24;
-    font-style: italic;
+.map-container,
+.three-container {
+width: 100%;
+height: 100%;
+border-radius: 8px;
+overflow: hidden;
+position: relative;
+flex: 1;
+min-height: 400px;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    
-    .header h1 {
-        font-size: 2rem;
-    }
-    
-    .controls-panel {
-        padding: 20px;
-    }
-    
-    .three-container,
-    .map-container {
-        height: 300px;
-    }
+.three-container {
+background: #0f172a;
+border: 2px solid #3b82f6;
+box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
 }
+
+.three-container canvas {
+width: 100% !important;
+height: 100% !important;
+display: block;
+border-radius: 6px;
+}
+
+.controls-hint {
+position: absolute;
+bottom: 10px;
+right: 10px;
+background: rgba(15, 23, 42, 0.9);
+padding: 8px 12px;
+border-radius: 6px;
+font-size: 12px;
+color: #94a3b8;
+border: 1px solid #334155;
+z-index: 1000;
+}
+
+.controls-hint div {
+margin: 2px 0;
+}
+
+.leaflet-container {
+height: 100% !important;
+width: 100% !important;
+border-radius: 6px;
+}
+
+.controls-panel {
+display: flex;
+flex-direction: column;
+min-height: 0;
+}
+
+.control-group {
+flex-shrink: 0;
+}
+
+.visualization-panel {
+display: flex;
+flex-direction: column;
+min-height: 0;
+}
+
