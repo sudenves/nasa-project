@@ -14,9 +14,15 @@
     <link rel="stylesheet" href="styles/results.css">
     <link rel="stylesheet" href="styles/animation.css">
     <link rel="stylesheet" href="styles/map.css">
-</head>
 <body>
-    <div class="container">
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="splash-icon">☄️</div> 
+            <p class="splash-text">NASA detected an object approaching Earth...</p>
+            <p class="splash-text-reveal">The world's destiny is in your hands. Save the world!</p>
+        </div>
+    </div>
+    <div id="main-content" class="container hidden"> 
         <header class="header">
             <h1>Impactor-2025: Global Risk Management</h1>
         </header>
@@ -73,6 +79,11 @@
 
             <div class="visualization-panel">
                 <div class="viz-container">
+                    <h3>Potential Impact Zone (2D Map)</h3>
+                    <p class="map-hint">Click on the map to select a potential impact point</p>
+                    <div id="map" class="map-container"></div>
+                </div>
+                <div class="viz-container">
                     <h3>Asteroid Trajectory (3D)</h3>
                     <div class="three-container">
                         <canvas id="three-canvas"></canvas>
@@ -84,11 +95,6 @@
                     </div>
                 </div>
 
-                <div class="viz-container">
-                    <h3>Potential Impact Zone (2D Map)</h3>
-                    <p class="map-hint">Click on the map to select a potential impact point</p>
-                    <div id="map" class="map-container"></div>
-                </div>
             </div>
         </main>
     </div>
